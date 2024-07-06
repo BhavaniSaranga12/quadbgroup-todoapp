@@ -6,6 +6,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Home from './Components/Home'
 import Add from './Components/Add'
 import AllTasks from './Components/AllTasks';
+import toast, { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
       </div>
     </footer>
     </BrowserRouter>
+    <Toaster />
     </div>
   );
 };

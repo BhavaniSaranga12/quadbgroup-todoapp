@@ -4,6 +4,7 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { deleteTask, editTask, toggleTask } from '../redux/slices/taskSlice';
 import Box from '@mui/material/Box';
+import toast from 'react-hot-toast';
 
 import Modal from '@mui/material/Modal';
 
@@ -54,12 +55,14 @@ const AllTasks = () => {
 
       function handleEdit() {
         dispatch(editTask({ id: taskToEdit, title: updateTask, description: updateDescription }));
+        toast.success('Task updated succesfully')
          handleClose();
       };   
 
 
       const handleDelete = (id) => {
         dispatch(deleteTask(id));
+        toast.success('Task deleted succesfully')
       };
 
 

@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { addTask } from '../redux/slices/taskSlice';
 import '../App.css'
+import toast from 'react-hot-toast';
 
 const Add = () => {
     const [task, setTask] = useState('');
@@ -13,6 +14,7 @@ const Add = () => {
         dispatch(addTask({task,description}));
         setTask('');
         setDescription('')
+        toast.success('Task added succesfully')
       }
     };
   return (
